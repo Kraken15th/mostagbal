@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المستقبل - لغرف النوم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap');
+
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #eab308;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+        }
+
+        .sticky-btn {
+            position: fixed;
+            left: 20px;
+            z-index: 999;
+            animation: pulse 2s infinite;
+        }
+
+        /* Mobile sticky buttons adjustments */
+        @media (max-width: 768px) {
+            .sticky-btn {
+                left: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            .sticky-btn i {
+                font-size: 1.25rem;
+            }
+
+            .sticky-btn span {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sticky-btn {
+                left: 5px;
+                padding: 0.5rem;
+                width: 50px;
+                height: 50px;
+                justify-content: center;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .advantage-card {
+            transition: all 0.3s ease;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(234, 179, 8, 0.3);
+        }
+
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        /* Responsive hero text */
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-amber-50">
+    <!-- Sticky Contact Buttons -->
+    <a href="https://wa.me/966550729144" target="_blank"
+        class="sticky-btn bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg flex items-center space-x-2 space-x-reverse"
+        style="bottom: 100px;">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="font-semibold">تواصل واتساب</span>
+    </a>
+
+    <a href="tel:+966550729144"
+        class="sticky-btn bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full shadow-lg flex items-center space-x-2 space-x-reverse"
+        style="bottom: 30px;">
+        <i class="fas fa-phone-alt text-xl"></i>
+        <span class="font-semibold">اتصل بنا الآن</span>
+    </a>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-amber-50 border-b border-amber-200 fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 md:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 lg:space-x-8 space-x-reverse">
+                    <a href="#home" class="nav-link text-gray-700 font-medium hover:text-yellow-600">الرئيسية</a>
+                    <a href="#contact" class="nav-link text-gray-700 font-medium hover:text-yellow-600">تواصل معنا</a>
+                </div>
+
+                <!-- Logo -->
+                <div class="text-xl md:text-2xl font-bold text-gray-800">
+                    <span class="text-yellow-600">⭐</span> المستقبل <span class="text-yellow-600">⭐</span>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-700 font-medium hover:text-yellow-600">الرئيسية</a>
+                <a href="#contact" class="block py-2 text-gray-700 font-medium hover:text-yellow-600">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen pt-16">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1600" alt="غرفة نوم"
+                class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <div
+            class="relative container mx-auto px-4 md:px-6 min-h-screen flex flex-col justify-center items-center text-center text-white py-20">
+            <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+                <span class="text-yellow-400">⭐</span> المستقبل <span class="text-yellow-400">⭐</span>
+            </h1>
+            <h2 class="hero-subtitle text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-4"> لغرف النوم الجاهزه
+                والتفصيل
+            </h2>
+            <p class="hero-description text-base md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-3xl leading-relaxed px-4">
+                في معرض المستقبل نوفر لعملائنا الكرام أجمل تصاميم وأشكال غرف النوم الحديثة والعصرية.
+                الأرقى في جميع انحاء المملكة العربية السعودية نضمن لكم جودة عالية ، وراحة تامه تحصلون عليها من خلال
+                منتجاتنا المتميزة.
+                الكفاءة العالية في توفير منتجات ذات جودة عالية ومتنوعة وباسعار منافسة ومتميزة لكل العملاء.
+            </p>
+            <a href="#contact"
+                class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold text-lg md:text-xl px-8 md:px-10 py-3 md:py-4 rounded-full shadow-2xl transition-all hover:scale-105">
+                تواصل معنا الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="w-full md:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="Assets/img1.jpeg" alt="خزانة" class="rounded-lg shadow-lg">
+                        <img src="Assets/img2.jpeg" alt="سرير" class="rounded-lg shadow-lg mt-8">
+                        <img src="Assets/img3.jpeg" alt="كومودينو" class="rounded-lg shadow-lg -mt-8">
+                        <img src="Assets/img4.jpeg" alt="طاولة" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 text-right">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 md:mb-6">
+                        غرف نوم حديثة، تصاميم عصرية ومتنوعة<br>
+                        <span class="text-yellow-600">مختلفة تناسب كل ذوق</span>
+                    </h2>
+                    <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
+                        نحن في المستقبل نقدم لعملائنا الكرام أجمل التصاميم المتميزة والمختلفة، أفضل الخامات، والأجود على
+                        الإطلاق.
+                        جميع التصاميم الحديثة والعصرية المميزة و المتوفرة لدى المعرض الموجودة في الكتالوج وتشمل جميع
+                        الأذواق والأستايلات الحديثة والكلاسيكية.
+                    </p>
+                    <a href="#products"
+                        class="inline-block bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold px-6 md:px-8 py-2 md:py-3 rounded-lg transition-all text-sm md:text-base">
+                        تصفح معنا الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="py-20 bg-amber-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">مزايانا المميزة</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">نحن دائماً نسعى لتوفير أفضل الخدمات والمميزات لعملائنا
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="advantage-card bg-white p-8 rounded-xl border-2 border-yellow-400 text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-couch text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">تصميم عصري</h3>
+                    <p class="text-gray-600">أحدث التصاميم العصرية والحديثة</p>
+                </div>
+
+                <div class="advantage-card bg-white p-8 rounded-xl border-2 border-yellow-400 text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">جودة الخامات</h3>
+                    <p class="text-gray-600">نستخدم أفضل وأجود الخامات المضمونة</p>
+                </div>
+
+                <div class="advantage-card bg-white p-8 rounded-xl border-2 border-yellow-400 text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tag text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">اسعار منافسة</h3>
+                    <p class="text-gray-600">أسعار تنافسية ومميزة للجميع</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="advantage-card bg-white p-8 rounded-xl border-2 border-yellow-400 text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">جودة التصنيع بالمعاينة المضمونة</h3>
+                    <p class="text-gray-600">ضمان الجودة والتصنيع المحترف</p>
+                </div>
+
+                <div class="advantage-card bg-white p-8 rounded-xl border-2 border-yellow-400 text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shipping-fast text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">شحنة متميزة بتوصيل وتركيب</h3>
+                    <p class="text-gray-600">خدمة توصيل وتركيب</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-amber-100 border-t-4 border-yellow-500 py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">
+                    <span class="text-yellow-600">⭐</span> المستقبل <span class="text-yellow-600">⭐</span>
+                </h3>
+                <p class="text-gray-600 text-lg mb-6">
+                    المستقبل لتصنيع غرف النوم، نوفر لعملائنا أجمل وأحدث التصاميم العصرية والحديثة.
+                    ونقدم أيضاً جميع أنواع الأثاث المنزلي بأفضل الخامات وأسعار منافسة
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center">
+                <div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-600 hover:text-yellow-600 transition-colors">الرئيسية</a>
+                        </li>
+                        <li><a href="#about" class="text-gray-600 hover:text-yellow-600 transition-colors">من نحن</a>
+                        </li>
+                        <li><a href="#products"
+                                class="text-gray-600 hover:text-yellow-600 transition-colors">المنتجات</a></li>
+                        <li><a href="#advantages"
+                                class="text-gray-600 hover:text-yellow-600 transition-colors">المميزات</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">معلومات الاتصال</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><i class="fas fa-map-marker-alt text-yellow-600 ml-2"></i> السعودية ، الرياض/li>
+                        <li><i class="fas fa-phone text-yellow-600 ml-2"></i> +966 55 072 9144</li>
+
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">تابعنا</h4>
+                    <div class="flex justify-center space-x-4 space-x-reverse">
+                        <a href="https://www.tiktok.com/@rooms596?_t=ZS-90uGB6fvGw0&_r=1" target="_blank"
+                            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+
+                        <a href="https://wa.me/966550729144" target="_blank"
+                            class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-yellow-300 pt-6 text-center">
+                <p class="text-gray-600">&copy; 2025 المستقبل. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation link
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-yellow-600');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('text-yellow-600');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
